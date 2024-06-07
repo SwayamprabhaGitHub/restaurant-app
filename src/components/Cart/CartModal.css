@@ -1,0 +1,55 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    position: fixed;
+    top: 30vh;
+    left: 32.5%;
+    width: 35%;
+    height: 20%;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.modal header {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.modal div {
+    font-size: 30px;
+    font-weight: bolder;
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.modal div p {
+    margin-top: 5px;
+}
+
+.modal footer {
+    position: absolute;
+    right: 1%;
+}
+
+.modal footer button {
+    background-color: brown;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    font-size: 17px;
+    margin-right: 5px;
+    border: none;
+}
