@@ -12,17 +12,18 @@
     background-color: white;
     border-radius: 20px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
     position: fixed;
     top: 30vh;
     left: 32.5%;
-    width: 35%;
-    height: 20%;
     z-index: 100;
     overflow: hidden;
 }
 
-.modal header {
-    font-weight: bold;
+.modal ul {
     margin-top: 10px;
     margin-bottom: 0;
 }
@@ -31,7 +32,7 @@
     font-size: 30px;
     font-weight: bolder;
     display: flex;
-    margin: 0;
+    margin: 0 0 20px 0;
     justify-content: space-between;
 }
 
@@ -39,9 +40,15 @@
     margin-top: 5px;
 }
 
+#total {
+    margin-right: 300px;
+}
+
 .modal footer {
     position: absolute;
+    bottom: 1%;
     right: 1%;
+    
 }
 
 .modal footer button {

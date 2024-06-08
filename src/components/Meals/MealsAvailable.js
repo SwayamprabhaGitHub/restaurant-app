@@ -41,7 +41,7 @@ const MealsAvailable = () => {
               <p id="price">{Meal.price}</p>
             </div>
             <div>
-              <MealsForm />
+              <MealsForm id={Meal.id} mealToAdd={Meal}/>
             </div>
           </li>
         );
