@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import "./CartModal.css";
 import CartContext from "../../store/cart-context";
+import CartItems from "./CartItems";
 
 const Backdrop = (props) => {
   return <div className="backdrop" onClick={props.onCartClose}></div>;
@@ -26,15 +27,7 @@ const ModalOverlay = (props) => {
   });
   return (
     <div className="modal">
-      <ul>
-        {mealsList.map((item) => {
-          return (
-            <li key={item.id}>
-              <p>{`${item.meal} ${item.price} Quantity: ${item.quantity}`}</p>
-            </li>
-          );
-        })}
-      </ul>
+      <CartItems listOfMeals={mealsList} />
       <div>
         <p id="total">Total Amount</p>
         <p id="dollar">${totalAmount}</p>
