@@ -10,7 +10,7 @@ const CartItems = (props) => {
                     {meal.meal}<br/>
                     {meal.price}<br/>
                 </li>
-                <CartItemsButton quantity={meal.quantity} />
+                <CartItemsButton mealQuantity={meal} />
             </div>
         })}
     </ul>

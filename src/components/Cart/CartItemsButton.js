@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import CartContext from "../../store/cart-context";
 
 const CartItemsButton = (props) => {
-    const [qnty, setQnty] = useState(props.quantity);
+    const cartCnxt = useContext(CartContext);
     const reduceQuantityHandler = (event) => {
         event.preventDefault();
-        setQnty(qnty - 1);
+        if(props.mealQuantity.quantity >= 2) {
+            cartCnxt.addItem({...props.mealQuantity, quantity: -1});
+        }
+        else {
+            cartCnxt.removeItem(props.mealQuantity.id);
+        }
+        
+        
+    }
+    const increaseQuantityHandler = (event) => {
+        event.preventDefault();
+        cartCnxt.addItem({...props.mealQuantity, quantity: 1})
     }
     
+    
     return <div>
-        Quantity: {qnty}
+        Quantity: {props.mealQuantity.quantity}
         <br/>
         <button onClick={reduceQuantityHandler}>-</button>
-        <button>+</button>
+        <button onClick={increaseQuantityHandler}>+</button>
     </div>
 }
 

@@ -9,25 +9,14 @@ const Backdrop = (props) => {
 };
 const ModalOverlay = (props) => {
   const cartCnxt = useContext(CartContext);
-  const mapList = {};
-  cartCnxt.items.forEach((item) => {
-    if (mapList[item.id]) {
-      mapList[item.id].quantity =
-        Number(mapList[item.id].quantity) + Number(item.quantity);
-    } else {
-      mapList[item.id] = { ...item };
-      mapList[item.id].quantity = Number(item.quantity);
-    }
-  });
-  const mealsList = Object.values(mapList);
-  console.log(mealsList);
+  
   let totalAmount = 0;
-  mealsList.forEach((item) => {
+  cartCnxt.items.forEach((item) => {
     totalAmount += Number(item.quantity) * Number(item.price.slice(1));
   });
   return (
     <div className="modal">
-      <CartItems listOfMeals={mealsList} />
+      <CartItems listOfMeals={cartCnxt.items} />
       <div>
         <p id="total">Total Amount</p>
         <p id="dollar">${totalAmount}</p>
