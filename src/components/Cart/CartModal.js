@@ -7,9 +7,10 @@ import CartItems from "./CartItems";
 const Backdrop = (props) => {
   return <div className="backdrop" onClick={props.onCartClose}></div>;
 };
+
 const ModalOverlay = (props) => {
   const cartCnxt = useContext(CartContext);
-  
+
   let totalAmount = 0;
   cartCnxt.items.forEach((item) => {
     totalAmount += Number(item.quantity) * Number(item.price.slice(1));

@@ -8,7 +8,7 @@ const HeaderCartButton = (props) => {
   let quantity = 0;
   cartCtx.items.forEach((item) => {
     quantity = quantity + Number(item.quantity);
-  })
+  });
   return (
     <button className={classes.button} onClick={props.onCartButton}>
       <img src={cartImage} alt="logo" className={classes.icon}></img>
